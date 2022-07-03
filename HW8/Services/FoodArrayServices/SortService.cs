@@ -8,7 +8,7 @@ namespace HW8
 {
     public class SortService : ISort
     {
-        private QuestionToUser _questionToUser = new QuestionToUser();
+        private QuestionToUser _questionToUser = new ();
         public void SortArray(Food[] array)
         {
             _questionToUser.TypeOfSort();

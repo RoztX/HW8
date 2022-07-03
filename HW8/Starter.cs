@@ -8,17 +8,25 @@ namespace HW8
 {
     public class Starter
     {
+        private readonly FoodArray _foodArray;
+        private readonly IOutput _output;
+        private readonly ISort _sort;
+        private readonly IFilter _filter;
+
+        public Starter(IOutput output, ISort sort, IFilter filter)
+        {
+            _foodArray = new FoodArray();
+            _output = output;
+            _sort = sort;
+            _filter = filter;
+        }
+
         public void Start()
         {
-            var foodArray = new FoodArray();
-            var outputService = new OutputService();
-            var sortService = new SortService();
-            var filterService = new FilterService();
-
-            outputService.OutputArray(foodArray.ArrayOfFood);
-            sortService.SortArray(foodArray.ArrayOfFood);
-            outputService.OutputArray(foodArray.ArrayOfFood);
-            outputService.OutputArray(filterService.FilterAray(foodArray.ArrayOfFood));
+            _output.OutputArray(_foodArray.ArrayOfFood);
+            _sort.SortArray(_foodArray.ArrayOfFood);
+            _output.OutputArray(_foodArray.ArrayOfFood);
+            _output.OutputArray(_filter.FilterAray(_foodArray.ArrayOfFood));
         }
     }
 }

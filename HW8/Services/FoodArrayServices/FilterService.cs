@@ -8,7 +8,7 @@ namespace HW8
 {
     public class FilterService : IFilter
     {
-        private QuestionToUser _questionToUser = new QuestionToUser();
+        private QuestionToUser _questionToUser = new ();
         public Food[] FilterAray(Food[] array)
         {
             _questionToUser.TypeOfFilter();

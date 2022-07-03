@@ -1,3 +1,7 @@
 ﻿using HW8;
-var starter = new Starter();
+using Autofac;
+
+var config = new Config();
+var conteiner = config.RegistrarDependency();
+var starter = conteiner.Resolve<Starter>();
 starter.Start();
