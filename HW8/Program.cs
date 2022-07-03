@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using HW8;
+using Autofac;
+
+var config = new Config();
+var conteiner = config.RegistrarDependency();
+var starter = conteiner.Resolve<Starter>();
+starter.Start();
